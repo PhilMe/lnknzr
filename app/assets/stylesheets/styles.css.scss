@@ -1,12 +1,42 @@
 @import 'bootstrap';
 
+html{
+	background:url('background.jpg') no-repeat center center;
+
+    /* Ensure the html element always takes up the full height of the browser window */
+    min-height: 100%;
+
+    /* The Magic */
+    background-size:cover;
+}
+
 body{
 	padding-top: 60px;
 	background: transparent;
 }
 
+h1{
+	font-size: 48pt;
+	line-height: 48pt;
+}
+h2{
+	font-size: 28pt;
+	line-height: 28pt;
+}
+
+
+/* Reihenfolge wichtig */
 @import 'bootstrap-responsive';
 
+.home{
+    /* background: rgb(255, 255, 255); */
+    /* Fall-back for browsers that don't support rgba */
+    /* background: rgba(255, 255, 255, .6); */
+	background: transparent;
+	color: $white;
+	text-align: center;
+	padding-top: 100px;
+}
 
 .footer{
 	margin-top: 50px;
@@ -16,26 +46,13 @@ body{
 	}
 }
 
-html{
-	background:url('background.jpg') no-repeat center center;
-
-    /* Ensure the html element always takes up the full height of the browser window */
-    min-height: 100%;
-
-    /* The Magic */
-    background-size:cover;
-	}
-
-.hero-unit{
-    /* background: rgb(255, 255, 255); */
-    /* Fall-back for browsers that don't support rgba */
-    /* background: rgba(255, 255, 255, .6); */
-	background: transparent;
-	color: $white;
-	text-align: center;
-}
 @media(max-width: 480px) {
   h1 {
-    font-size: 6pt;
+    font-size: 30pt;
+    line-height: 30pt;
+  }
+  h2{
+	font-size: 20pt;
+	line-height: 20pt;
   }
 }
