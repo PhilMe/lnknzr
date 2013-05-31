@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	  	<title>Lnknzr</title>
+	  	<title>lnknzr - organize your links</title>
 		  <%= stylesheet_link_tag    "application", :media => "all" %>
 		  <%= javascript_include_tag "application" %>
 		  <%= csrf_meta_tags %>
+		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
 		<div class="container">
-			<%= yield %>
-			<%= render 'layouts/footer' %>
+			<% flash.each do |name, msg| %>
+                <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+            <% end %>
+   			<%= yield %>
+   			<% if current_page?(root_url) %>
+   				
+   			<% else %>
+					<%= render 'layouts/footer' %>
+			<% end %>
 		</div>
 	</body>
 </html>

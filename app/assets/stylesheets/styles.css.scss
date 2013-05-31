@@ -2,6 +2,7 @@
 
 body{
 	padding-top: 60px;
+	background: transparent;
 }
 
 @import 'bootstrap-responsive';
@@ -9,8 +10,32 @@ body{
 
 .footer{
 	margin-top: 50px;
-	color: $grayLight;
+	/*color: $grayLight;*/
 	a {
 		color: $gray;
 	}
+}
+
+html{
+	background:url('background.jpg') no-repeat center center;
+
+    /* Ensure the html element always takes up the full height of the browser window */
+    min-height: 100%;
+
+    /* The Magic */
+    background-size:cover;
+	}
+
+.hero-unit{
+    /* background: rgb(255, 255, 255); */
+    /* Fall-back for browsers that don't support rgba */
+    /* background: rgba(255, 255, 255, .6); */
+	background: transparent;
+	color: $white;
+	text-align: center;
+}
+@media(max-width: 480px) {
+  h1 {
+    font-size: 6pt;
+  }
 }
