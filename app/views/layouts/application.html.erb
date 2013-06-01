@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html class="<%= @home_page ? 'homepage_html' : ''%>">
 	<head>
-	  	<title>lnknzr - organize your links</title>
+	  	<title>Lnknzr - organize your links</title>
 		  <%= stylesheet_link_tag    "application", :media => "all" %>
 		  <%= javascript_include_tag "application" %>
 		  <%= csrf_meta_tags %>
 		  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
-	<body>
+	<body class="<%= @home_page ? 'homepage' : ''%>">
+
 		<%= render 'layouts/header' %>
 		<div class="container">
 			<% flash.each do |name, msg| %>

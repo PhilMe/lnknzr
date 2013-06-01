@@ -1,18 +1,11 @@
 @import 'bootstrap';
 
 html{
-	background:url('background.jpg') no-repeat center center;
 
-    /* Ensure the html element always takes up the full height of the browser window */
-    min-height: 100%;
-
-    /* The Magic */
-    background-size:cover;
 }
 
 body{
 	padding-top: 60px;
-	background: transparent;
 }
 
 h1{
@@ -38,6 +31,20 @@ h2{
 	padding-top: 5.5em;
 }
 
+/* Alles wichtig für den Hintergrund auf der HomePage */
+.homepage{
+	background: transparent;
+}
+.homepage_html{
+	background:url('background.jpg') no-repeat center center;
+
+    /* Ensure the html element always takes up the full height of the browser window */
+    min-height: 100%;
+
+    /* The Magic */
+    background-size:cover;
+}
+
 .footer{
 	margin-top: 50px;
 	/*color: $grayLight;*/
@@ -46,6 +53,7 @@ h2{
 	}
 }
 
+/* Einstellungen für Handydisplays */
 @media(max-width: 480px) {
   h1 {
     font-size: 30pt;
