@@ -1,9 +1,9 @@
 class LinksController < ApplicationController
-  
+  before_filter :authenticate_user!
   # GET /links
   # GET /links.json
   def index
-    @links = Link.all
+    @links = current_user.links.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class LinksController < ApplicationController
   # GET /links/1
   # GET /links/1.json
   def show
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,7 +25,7 @@ class LinksController < ApplicationController
   # GET /links/new
   # GET /links/new.json
   def new
-    @link = Link.new
+    @link = current_user.links.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +35,13 @@ class LinksController < ApplicationController
 
   # GET /links/1/edit
   def edit
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
   end
 
   # POST /links
   # POST /links.json
   def create
-    @link = Link.new(params[:link])
+    @link = current_user.links.new(params[:link])
 
     respond_to do |format|
       if @link.save
@@ -57,7 +57,7 @@ class LinksController < ApplicationController
   # PUT /links/1
   # PUT /links/1.json
   def update
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
 
     respond_to do |format|
       if @link.update_attributes(params[:link])
@@ -73,7 +73,7 @@ class LinksController < ApplicationController
   # DELETE /links/1
   # DELETE /links/1.json
   def destroy
-    @link = Link.find(params[:id])
+    @link = current_user.links.find(params[:id])
     @link.destroy
 
     respond_to do |format|
